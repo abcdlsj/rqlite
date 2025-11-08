@@ -1,4 +1,11 @@
-## v9.2.2 (November 4th 2025)
+## v9.2.4 (unreleased)
+### Implementation changes and bug fixes
+- [PR #2384](https://github.com/rqlite/rqlite/pull/2384): Don't attempt stepdown if single node cluster.
+
+## v9.2.3 (November 7th 2025)
+There are no changes in v9.2.3 relative to v9.2.2 in terms of rqlite functionality. This release simply [fixes](https://github.com/rqlite/rqlite/commit/0907fd93e6f459ad8f6b305a1eb9e1dce43e9ff0) an `arm/v6` and `arm/v7` Docker packaging issue.
+
+## v9.2.2 (November 7th 2025)
 ### Implementation changes and bug fixes
 - [PR #2382](https://github.com/rqlite/rqlite/pull/2382): Add `/licenses` endpoint to HTTP API.
 - [PR #2383](https://github.com/rqlite/rqlite/pull/2383): Add actual licenses.
