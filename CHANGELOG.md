@@ -5,6 +5,7 @@
 - [PR #2764](https://github.com/rqlite/rqlite/pull/2764): Use distinct Snapshot Namer type. See issue [#2763](https://github.com/rqlite/rqlite/issues/2763).
 - [PR #2755](https://github.com/rqlite/rqlite/pull/2755): Replace breaking-pragma regexes with ASCII prefix scanning. Thanks @zxysilent
 - [PR #2724](https://github.com/rqlite/rqlite/pull/2724): Consolidate pragma and txStatus reads onto a single connection per pool. Thanks @KochC
+- [PR #2767](https://github.com/rqlite/rqlite/pull/2767): Fix some magic strings in `db` package.
 
 ## v10.3.1 (September 3rd 2026)
 ### Implementation changes and bug fixes
