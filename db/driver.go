@@ -11,8 +11,9 @@ import (
 )
 
 const (
-	defaultDriverName = "rqlite-sqlite3"
-	chkDriverName     = "rqlite-sqlite3-chk"
+	defaultDriverName    = "rqlite-sqlite3"
+	chkDriverName        = "rqlite-sqlite3-chk"
+	foreignKeyDriverName = "rqlite-sqlite3-foreignkey"
 )
 
 // CnkOnCloseMode represents the checkpoint on close mode.
@@ -105,7 +106,7 @@ var fkRegisterOnce sync.Once
 // on every connection. It also enables no-check
 func ForeignKeyDriver() *Driver {
 	fkRegisterOnce.Do(func() {
-		sql.Register("rqlite-sqlite3-foreignkey", &sqlite3.SQLiteDriver{
+		sql.Register(foreignKeyDriverName, &sqlite3.SQLiteDriver{
 			ConnectHook: func(conn *sqlite3.SQLiteConn) error {
 				// Enable foreign key support via the SQLite PRAGMA
 				if _, err := conn.Exec("PRAGMA foreign_keys = ON", nil); err != nil {
@@ -116,7 +117,7 @@ func ForeignKeyDriver() *Driver {
 		})
 	})
 	return &Driver{
-		name:       "rqlite-sqlite3-foreignkey",
+		name:       foreignKeyDriverName,
 		chkOnClose: CnkOnCloseModeDisabled,
 	}
 }
